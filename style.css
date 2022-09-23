@@ -331,9 +331,7 @@
         font-size: 17px;
     }
     .button{
-        left: 50%;
-        transform: translateX(-100px);
-
+        left: 0;
     }
 
     .button.open .hamburger-container .hamburger::before{
