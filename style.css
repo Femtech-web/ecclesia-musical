@@ -113,6 +113,41 @@
     border-radius: 8px;
     margin-left: 15px;
 }
+
+.right-curtain{
+    position: absolute;
+    left: 25%;
+    top: 4%;
+    border: 1px solid    #a9a9a9;
+    border-radius: 15px;
+    width: 350px;
+}
+
+.right-container{
+    border: 1px solid  rgb(0,0,15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    padding-right: 10px;
+    border-radius: 15px;
+    height: 40px;
+}
+
+.right-curtain img{
+    width: 40px;
+    height: 40px;
+}
+.right-curtain input{
+    height: 35px;
+    width: 100%;
+    border-radius: 15px;
+    border: 1px solid  rgb(0,0,15);
+    outline: 2px solid  rgb(0,0,15);
+    background-color:   #a9a9a9;
+    color: black;
+    padding: 8px;
+}
 .left-main h1{
     font-size: 60px;
     margin-bottom: 5px;
@@ -181,6 +216,10 @@
         width: 40vw;
         height: 60vh;
         overflow:hidden ;
+    }
+
+    .right-curtain{
+        left: 35%;
     }
     
     .right-main{
@@ -297,6 +336,10 @@
         top: 30px;
     }
 
+    .right-curtain{
+        top: 25%;
+        left: 20%;
+    }
     .button.open .hamburger-container .hamburger::before{
         transform: rotate(45deg) translate(-85px, 85px);
     
@@ -328,6 +371,9 @@
     }
     .left-curtain h1{
         font-size: 25px;
+    }
+    .right-curtain{
+        width: 220px;
     }
     .left-main h1{
         font-size: 40px;
