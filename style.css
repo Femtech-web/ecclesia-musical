@@ -306,9 +306,12 @@
         width: 250px;
         height: 250px;
     }
+    .main{
+        left: 30px;
+    }
 
     .left-curtain{
-        left: 25px;
+        left: 20px;
         top: 30px;
     }
     .left-main h1{
@@ -319,6 +322,19 @@
     }
     .showcase li{
         font-size: 17px;
+    }
+    .button{
+        left: -40%;
+    }
+
+    .button.open .hamburger-container .hamburger::before{
+        transform: rotate(45deg) translate(-85px, 85px);
+    
+        
+    }
+    
+    .button.open .hamburger-container .hamburger::after{
+        transform: rotate(-45deg) translate(-85px, -85px);
     }
     
 }
