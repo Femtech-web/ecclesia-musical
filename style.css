@@ -204,8 +204,7 @@
         height: 50px;
         width: 50px;
         top: 10px;
-        left: 0%;
-        transform: translateX(200px);
+        left: 90%;
         justify-content: center;
         align-items: center;
         z-index: 5;
@@ -272,13 +271,13 @@
 }
 
 .button.open .hamburger-container .hamburger::before{
-	transform: rotate(45deg) translate(-65px, 65px);
+	transform: rotate(45deg) translate(-85px, 85px);
 
 	
 }
 
 .button.open .hamburger-container .hamburger::after{
-	transform: rotate(-45deg) translate(-65px, -65px);
+	transform: rotate(-45deg) translate(-85px, -85px);
 }
 
 #nav-bar .button.open ~ .nav-container{
@@ -287,8 +286,18 @@
 }
 
 @media screen and (max-width: 600px){
+    .curtain-container{
+        width: 250px;
+        height: 250px;
+    }
+
+    .left-curtain{
+        left: 25px;
+        top: 30px;
+    }
+
     .button{
-        left: -30%;
+        left: 90%;
     }
 
     .button.open .hamburger-container .hamburger::before{
@@ -300,8 +309,10 @@
     .button.open .hamburger-container .hamburger::after{
         transform: rotate(-45deg) translate(-75px, -75px);
     }
+    
+}
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 360px){
     .curtain-container{
         width: 230px;
         height: 230px;
@@ -330,9 +341,9 @@
     .showcase li{
         font-size: 17px;
     }
-    .button{
-        left: 0;
-    }
+    /*.button{
+        left: 60%;
+    }*/
 
     .button.open .hamburger-container .hamburger::before{
         transform: rotate(45deg) translate(-95px, 95px); 
