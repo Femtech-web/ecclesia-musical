@@ -204,7 +204,7 @@
         height: 50px;
         width: 50px;
         top: 10px;
-        left: 90%;
+        left: 100%;
         justify-content: center;
         align-items: center;
         z-index: 5;
@@ -297,7 +297,7 @@
     }
 
     .button{
-        left: 90%;
+        
     }
 
     .button.open .hamburger-container .hamburger::before{
@@ -341,9 +341,9 @@
     .showcase li{
         font-size: 17px;
     }
-    /*.button{
-        left: 60%;
-    }*/
+    .button{
+        
+    }
 
     .button.open .hamburger-container .hamburger::before{
         transform: rotate(45deg) translate(-95px, 95px); 
