@@ -307,11 +307,11 @@
         height: 250px;
     }
     .main{
-        left: 30px;
+        left: 10px;
     }
 
     .left-curtain{
-        left: 20px;
+        left: 10px;
         top: 30px;
     }
     .left-main h1{
@@ -324,7 +324,7 @@
         font-size: 17px;
     }
     .button{
-        left: -40%;
+        left: 80%;
     }
 
     .button.open .hamburger-container .hamburger::before{
