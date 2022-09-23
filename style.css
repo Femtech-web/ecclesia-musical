@@ -331,17 +331,14 @@
         font-size: 17px;
     }
     .button{
-        left: 80%;
+        left: 50%;
     }
 
     .button.open .hamburger-container .hamburger::before{
-        transform: rotate(45deg) translate(-95px, 95px);
-    
-        
+        transform: rotate(45deg) translate(-95px, 95px); 
     }
     
     .button.open .hamburger-container .hamburger::after{
         transform: rotate(-45deg) translate(-95px, -95px);
-    }
-    
+    }    
 }
