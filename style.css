@@ -106,12 +106,22 @@
     opacity: 0.7;
 }
 
-.right-main img{
+.right-main .image-container{
     width: 45%;
+    margin-left: 15px;
+}
+
+.image-container p{
+    text-align: center;
+    font-family: Verdana, sans-serif;
+    padding: 7px;
+    font-size: 16px;
+}
+.right-main img{
+    width: 100%;
     height: 300px;
     display: block;
     border-radius: 8px;
-    margin-left: 15px;
 }
 
 .right-curtain{
@@ -230,9 +240,11 @@
         left: 10%;
         width: 80%;
     }
-
-    .right-main img{
-        width: 90%;
+    .right-main .image-container{
+        width:100% ;
+    }
+    .image-container img{
+        width: 95%;
         height: 250px;
         margin-bottom: 15px;
     }
