@@ -300,5 +300,25 @@
     .button.open .hamburger-container .hamburger::after{
         transform: rotate(-45deg) translate(-75px, -75px);
     }
+
+@media screen and (max-width: 360px){
+    .curtain-container{
+        width: 250px;
+        height: 250px;
+    }
+
+    .left-curtain{
+        left: 25px;
+        top: 30px;
+    }
+    .left-main h1{
+        font-size: 40px;
+    }
+    .left-main p{
+        font-size:15px ;
+    }
+    .showcase li{
+        font-size: 17px;
+    }
     
 }
