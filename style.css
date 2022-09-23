@@ -332,6 +332,8 @@
     }
     .button{
         left: 50%;
+        transform: translateX(-100px);
+
     }
 
     .button.open .hamburger-container .hamburger::before{
@@ -340,5 +342,5 @@
     
     .button.open .hamburger-container .hamburger::after{
         transform: rotate(-45deg) translate(-95px, -95px);
-    }    
+    }
 }
