@@ -301,7 +301,7 @@
         transform: rotate(-45deg) translate(-75px, -75px);
     }
 
-@media screen and (max-width: 360px){
+@media screen and (max-width: 400px){
     .curtain-container{
         width: 230px;
         height: 230px;
@@ -336,7 +336,8 @@
 
     .button.open .hamburger-container .hamburger::before{
         transform: rotate(45deg) translate(-95px, 95px);
-      
+    
+        
     }
     
     .button.open .hamburger-container .hamburger::after{
