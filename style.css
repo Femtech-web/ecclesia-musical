@@ -242,6 +242,7 @@
     }
     .right-main .image-container{
         width:100% ;
+        margin-top: 5px;
     }
     .image-container img{
         width: 95%;
@@ -389,6 +390,11 @@
     }
     .left-main h1{
         font-size: 40px;
+    }
+    .image-container img{
+        width: 95%;
+        height: 200px;
+        margin-bottom: 15px;
     }
     .left-main p{
         font-size:15px ;
