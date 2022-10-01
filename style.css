@@ -531,7 +531,7 @@
     
 }
 
-@media screen and (max-width: 360px){
+@media screen and (max-width: 400px){
     .curtain-container{
         width: 230px;
         height: 230px;
@@ -547,13 +547,13 @@
 	
     .newsletter, .other-links{
         position: relative;
-        left: 4%;
+        left: 5%;
     }
 	.links-container{
-		margin-left: 15px;
+		margin-left: 10px;
 	}
 	.newsletter > p{
-    font-size: 12px;
+    font-size: 10px;
 }
     .left-curtain  p{
         font-size: 15px;
