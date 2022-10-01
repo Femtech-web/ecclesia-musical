@@ -547,11 +547,14 @@
 	
     .newsletter, .other-links{
         position: relative;
-        left: 2%;
+        left: 4%;
     }
 	.links-container{
-		margin-left: 30px;
+		margin-left: 15px;
 	}
+	.newsletter > p{
+    font-size: 12px;
+}
     .left-curtain  p{
         font-size: 15px;
         letter-spacing: 0.3rem;
