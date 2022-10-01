@@ -549,6 +549,9 @@
         position: relative;
         left: 2%;
     }
+	.links-container{
+		margin-left: 30px;
+	}
     .left-curtain  p{
         font-size: 15px;
         letter-spacing: 0.3rem;
