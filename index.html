@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="fonts/alex-brush/stylesheet.css">
     <link rel="stylesheet" href="fonts/lobster/weighted-stylesheet.css">
     <link rel="stylesheet" href="fonts/lobster/hinted-stylesheet.css">
@@ -37,10 +37,10 @@
 				</div>
 			</div>
             <ul class="nav-container">
-                <li class="home touch"><a href="">Home</a></li>
-                <li class="touch"><a href="">Services</a></li>
-                <li  class="touch"><a href="">About</a></li>
-                <li class="contact"><a href="" >Contact us</a></li>
+                <li class="active touch nav-btn"><a href="a">Home</a></li>
+                <li class="touch nav-btn"><a href="">Services</a></li>
+                <li  class="touch nav-btn"><a href="about.html">About</a></li>
+                <li class="contact nav-btn"><a href="" >Contact us</a></li>
             </ul>
         </div>
 
@@ -48,11 +48,11 @@
 
             <div class="left-main">
                 <h1>Feel the Music</h1>
-                <ul class="showcase">
-                    <li>Sound</li>
-                    <li>Beat</li>
-                    <li>Spiritual</li>
-                </ul>
+                <div class="showcase">
+                    <p>Sound</p>
+                    <p>Beat</p>
+                    <p>Spiritual</p>
+                </div>
                 <p>
                     music is an art, it soothes the heart and heal the soul.<br>
                     our musical band is ready to give you the best of it.<br>
@@ -68,11 +68,11 @@
 
         <div class="right-main">
             <div class="image-container">
-                <img src="images/underwater.jpg" alt="">
+                <img src="images/underwater.jpg" alt="A picture depicting soul lifting">
                 <p>Lifts your Soul</p>
             </div>
             <div class="image-container">
-                <img src="images/chicago.jpg" alt="">
+                <img src="images/chicago.jpg" alt="A guitarist in a live show">
                 <p>The Rythm</p>
             </div>
         </div>
@@ -87,11 +87,13 @@
                 <div class="footer-main">
                     <div class="newsletter">
                         <h1>Newsletter</h1>
-                        <input type="text">
+                        <input type="text" name="newsletter" type="email" placeholder="Input Your Email">
                         <div class="subscribe"> <p>Subscribe</p></div>
                         <p>Subscribe to our newsletter for updates!</p>
                     </div>
+
                     <div class="rule"></div>
+
                     <div class="other-links">
                         <div class="links-container">
                             <h3>Links</h3>
@@ -100,6 +102,7 @@
                             <p><a href="#">Members</a></p>
                             <p><a href="#">Blog</a></p>
                         </div>
+
                         <div class="links-container">
                             <h3>Overview</h3>
                             <p><a href="#">About</a></p>
@@ -107,6 +110,7 @@
                             <p><a href="#">Privacy policy</a></p>
                             <p><a href="#">Terms of use</a></p>
                         </div>
+
                         <div class="links-container">
                             <h3>Others</h3>
                             <p><a href="#">Support</a></p>
@@ -114,8 +118,11 @@
                             <p><a href="#">Community</a></p>
                             <p><a href="#">Media kit</a></p>
                         </div>
+
                     </div>
+
                 </div>
+
                 <h2 class="follow">Follow us</h2>
                 <div class="horizontal-rule"></div>
         
@@ -125,14 +132,14 @@
                     <a href=""><img src="images/twitter.png" alt="twitter logo"></a> 
                     <a href=""><img src="images/whatsapp.png" alt="whatsapp logo"></a>
                 </div>
-                <p class="copyright">Copyright &copy; 2022 ecclesia musical. </p>
+                <div class="copyright"><p>Copyright &copy; 2022 ecclesia musical.</p></div>
             </div>
         </div>
     
     </div>
 
     
-    <script src="script.js"></script>
+    <script src="scripts/script.js"></script>
 </body>
 
 </html>
