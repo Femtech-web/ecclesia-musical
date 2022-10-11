@@ -590,6 +590,20 @@ flex: 30%;
 }
 
 @media screen and (max-width: 600px){
+    .curtain-container{
+        width: 250px;
+        height: 250px;
+    }
+
+    .left-curtain{
+        left: 25px;
+        top: 30px;
+    }
+
+    .showcase li{
+        font-size: 1rem;
+    }
+
     .categories{
         grid-template-columns: 100px 100px 100px;
         grid-gap: 10px 0px;
@@ -603,18 +617,8 @@ flex: 30%;
         font-size: 1rem;
     }
 
-    .curtain-container{
-        width: 250px;
-        height: 250px;
-    }
-
-    .left-curtain{
-        left: 25px;
-        top: 30px;
-    }
-
-    .showcase li{
-        font-size: 1rem;
+    .first-column > p{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
     
     .button.open .hamburger-container .hamburger::before{
