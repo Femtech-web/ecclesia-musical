@@ -196,6 +196,15 @@ body{
     object-fit: cover;
 }
 
+.dropdown{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: none;
+}
+
 .footer{
     position: relative;
     height: 70vh;
@@ -381,6 +390,14 @@ body{
         width: 80vw;
     }
     
+    .dropdown{
+        display: block;
+    }
+
+    .inner-card{
+        position: relative;
+    }
+
     .animated-text .text{
         font-size: 1.4rem;
     }
@@ -430,8 +447,8 @@ body{
         height: 25vh;
     }
 
-    .span{
-        display: block;
+    .inner-text-head.span{
+        word-wrap:break-word;
     }
 
     .button{
@@ -454,6 +471,10 @@ body{
 
     .animated-text .text{
         font-size: 1.4rem;
+    }
+
+    .card{
+        height: 200px;
     }
 
     .inner-text-head{
