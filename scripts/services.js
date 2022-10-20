@@ -9,15 +9,15 @@ const btn = document.querySelector('.button');
 const dropBtn = document.querySelector('.dropdown');
 let menuOpen = true;
 
-const innerWords = ['<h3 class="inner-text-head">Birthdays <img src="images/down-arrow.png" width="20px" height="20px" class="dropdown"></h3>', 
-'<h3 class="inner-text-head">Weddings <img src="images/down-arrow.png" width="20px" height="20px" class="dropdown"></h3>', 
-'<h3 class="inner-text-head">child naming <img src="images/down-arrow.png" width="20px" height="20px" class="dropdown"></h3>',
-'<h3 class="inner-text-head span">anniversaries <img src="images/down-arrow.png" width="20px" height="20px" class="dropdown"></h3>',
-'<h3 class="inner-text-head">parties <img src="images/down-arrow.png" width="20px" height="20px" class="dropdown"></h3>',
-'<h3 class="inner-text-head">funerals <img src="images/down-arrow.png" width="20px" height="20px" class="dropdown"></h3>',
-'<h3 class="inner-text-head">festival <img src="images/down-arrow.png" width="20px" height="20px" class="dropdown"></h3>',
-'<h3 class="inner-text-head">carnivals <img src="images/down-arrow.png" width="20px" height="20px" class="dropdown"></h3>',
-'<h3 class="inner-text-head">concerts <img src="images/down-arrow.png" width="20px" height="20px" class="dropdown"></h3>'];
+const innerWords = ['<h3 class="inner-text-head"> <img src="images/down-arrow.png" width="20px" height="20px" class="dropdown">Birthdays</h3>', 
+'<h3 class="inner-text-head"><img src="images/down-arrow.png" width="20px" height="20px" class="dropdown"> Weddings</h3>', 
+'<h3 class="inner-text-head"> <img src="images/down-arrow.png" width="20px" height="20px" class="dropdown">child naming</h3>',
+'<h3 class="inner-text-head span"> <img src="images/down-arrow.png" width="20px" height="20px" class="dropdown">anniversaries</h3>',
+'<h3 class="inner-text-head"> <img src="images/down-arrow.png" width="20px" height="20px" class="dropdown">parties</h3>',
+'<h3 class="inner-text-head"> <img src="images/down-arrow.png" width="20px" height="20px" class="dropdown">funerals</h3>',
+'<h3 class="inner-text-head"> <img src="images/down-arrow.png" width="20px" height="20px" class="dropdown">festivals</h3>',
+'<h3 class="inner-text-head"> <img src="images/down-arrow.png" width="20px" height="20px" class="dropdown">carnivals</h3>',
+'<h3 class="inner-text-head"> <img src="images/down-arrow.png" width="20px" height="20px" class="dropdown">concerts</h3>'];
 
 const mouseoverWords = [' We are Ready to Lighten up Your Birthday and leave with you a moment to remember',
 'We are Ready to Glamour your Beautiful Moment of Love and wish you the best of Love',
@@ -104,7 +104,7 @@ const openSlider = (mediaEvent) => {
 					innerImage[i].firstElementChild.classList.add('inner-text-head2');
 					innerImage[i].style.backgroundColor =  innerCardColors[i];
 					innerImage[i].classList.add('inner-image2');
-					innerImage[i].children[0].children[0].style.opacity = '0';
+					innerImage[i].children[0].children[0].style.display = 'none';
 					const paragraph = document.createElement('p');
 					paragraph.innerText	= mouseoverWords[i];
 					paragraph.classList.add('inner-card-body');
@@ -131,7 +131,7 @@ const openSlider = (mediaEvent) => {
 };
 
 
-const mediaQuery = window.matchMedia('(max-width: 1000px)');
+const mediaQuery = window.matchMedia('(max-width: 600px)');
 openSlider(mediaQuery);
 
 mediaQuery.addListener(openSlider);
