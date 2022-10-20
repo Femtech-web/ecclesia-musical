@@ -667,6 +667,10 @@ flex: 30%;
         font-size: 1rem;
     }
 
+    .grid-container{
+        display: block;
+    }
+
     .first-column > p{
         font-family: 'varela Round',Verdana, Geneva, Tahoma, sans-serif;
         max-width: 700px;
