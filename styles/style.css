@@ -624,6 +624,10 @@ body{
 }
 
 @media screen and (max-width: 440px){
+    .load-icon{
+        left: 41%;
+    }
+
     .curtain-container{
         width: 230px;
         height: 230px;
@@ -637,7 +641,7 @@ body{
 
     .contact{
         background-color: transparent;
-	border: none;    
+        border: none;
     }
 
     .main{
@@ -655,6 +659,18 @@ body{
 
     .left-main p{
         max-width: 280px;
+    }
+
+    #nav-bar{
+        width: 80vw;
+    }
+
+    .button{
+        left: 53%;
+    }
+
+    .nav-container{
+        width: 60vw;
     }
 
     #footer{
@@ -763,5 +779,9 @@ body{
     
     .button.open .hamburger-container .hamburger::after{
         transform: rotate(-45deg) translate(-45px, -45px);
+    }
+
+    #nav-bar .button.open ~ .nav-container{
+        transform: translateX(-140%);
     }
 }
