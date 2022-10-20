@@ -6,17 +6,18 @@ const cards = document.querySelectorAll('.card');
 const innerCards = document.querySelectorAll('.inner-card');
 const innerImage = document.querySelectorAll('.inner-image');
 const btn = document.querySelector('.button');
+const dropBtn = document.querySelector('.dropdown');
 let menuOpen = true;
 
-const innerWords = ['<h3 class="inner-text-head">Birthdays</h3>', 
-'<h3 class="inner-text-head">Weddings</h3>', 
-'<h3 class="inner-text-head">child naming</h3>',
-'<h3 class="inner-text-head">anniver<span class="span">saries</span></h3>',
-'<h3 class="inner-text-head">parties</h3>',
-'<h3 class="inner-text-head">funerals</h3>',
-'<h3 class="inner-text-head">festivals</h3>',
-'<h3 class="inner-text-head">carnivals</h3>',
-'<h3 class="inner-text-head">concerts</h3>'];
+const innerWords = ['<h3 class="inner-text-head">Birthdays <img src="images/down-arrow.png" width="20px" height="20px" class="dropdown"></h3>', 
+'<h3 class="inner-text-head">Weddings <img src="images/down-arrow.png" width="20px" height="20px" class="dropdown"></h3>', 
+'<h3 class="inner-text-head">child naming <img src="images/down-arrow.png" width="20px" height="20px" class="dropdown"></h3>',
+'<h3 class="inner-text-head span">anniversaries <img src="images/down-arrow.png" width="20px" height="20px" class="dropdown"></h3>',
+'<h3 class="inner-text-head">parties <img src="images/down-arrow.png" width="20px" height="20px" class="dropdown"></h3>',
+'<h3 class="inner-text-head">funerals <img src="images/down-arrow.png" width="20px" height="20px" class="dropdown"></h3>',
+'<h3 class="inner-text-head">festival <img src="images/down-arrow.png" width="20px" height="20px" class="dropdown"></h3>',
+'<h3 class="inner-text-head">carnivals <img src="images/down-arrow.png" width="20px" height="20px" class="dropdown"></h3>',
+'<h3 class="inner-text-head">concerts <img src="images/down-arrow.png" width="20px" height="20px" class="dropdown"></h3>'];
 
 const mouseoverWords = [' We are Ready to Lighten up Your Birthday and leave with you a moment to remember',
 'We are Ready to Glamour your Beautiful Moment of Love and wish you the best of Love',
@@ -92,8 +93,9 @@ const openSlider = (mediaEvent) => {
 		};
 	} else{
 		for(let i = 0; i < cards.length; i++){
+			console.dir(cards);
 			cards[i].addEventListener('click', (e) => {
-				if(menuOpen){
+				if(menuOpen === true){
 					console.log(e);
 					innerCards[i].innerHTML = images[i];
 					innerImage[i].innerHTML = innerWords[i];
@@ -102,12 +104,14 @@ const openSlider = (mediaEvent) => {
 					innerImage[i].firstElementChild.classList.add('inner-text-head2');
 					innerImage[i].style.backgroundColor =  innerCardColors[i];
 					innerImage[i].classList.add('inner-image2');
+					innerImage[i].children[0].children[0].style.opacity = '0';
 					const paragraph = document.createElement('p');
 					paragraph.innerText	= mouseoverWords[i];
 					paragraph.classList.add('inner-card-body');
 					paragraph.style.fontFamily = "'varela Round', sans-serif";
 					innerImage[i].append(paragraph);
 					 menuOpen = false;
+					 console.dir(innerImage)
 				} else{
 						innerCards[i].innerHTML = innerWords[i];
 						innerImage[i].innerHTML = images[i];
