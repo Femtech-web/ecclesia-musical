@@ -2,7 +2,50 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html{
     scroll-behavior: smooth;
+}
+
+body{
+    background-color: lightgray;
+}
+
+.load-icon{
+    position: absolute;
+    top: 40%;
+    left: 45%;
+    z-index: 20;
+    animation: load 3s infinite;
+    transition: animation 0.5s ease-in-out, display 3s ease-in-out;
+    background-color: transparent;
+    border: 1px solid  black;
+    background-color: black;
+    color: white;
+    font-size: 1.5rem;
+    opacity: 0.8;
+    flex-direction: column;
+    display: flex;
+    align-items: flex-start;
+    border-radius: 5px;
+    padding: 10px;
+    transition: 0.5s;
+}
+
+.load-icon p{
+    letter-spacing: 0.3rem;
+    font-size: 0.5rem;
+}
+
+.load-icon h1{
+    font-size: 1rem;
+}
+
+@keyframes load {
+    0% { transform: scale(1)}
+    50% {transform: scale(2.5)}
+    100% {transform: scale(1)}
 }
 
 #landing-page{
@@ -12,6 +55,8 @@
     background-image: linear-gradient(to top left, black, rgb(0,0,35));
     color: white;
     overflow: auto;
+    visibility: hidden;
+    transition: visibility 4s ease-in-out;
 }
 
 .curtain-container{
@@ -48,6 +93,7 @@
     display: inline-block;
     padding: 10px;
     margin: 15px 25px;
+    position: relative;
 }
 
 .nav-container a{
@@ -59,10 +105,25 @@
     margin-top: 8px;
 }
 
-.touch:hover{
-    background-color: mediumslateblue;
-    opacity: 0.9;
-    border-radius: 5px;
+.touch::after{
+    content: '';
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    transform-origin: left;
+    top: 100%;
+    left: 0;
+    transition: all 0.5s;
+    transform: scale(0);
+    background-color: khaki;
+}
+
+.active::after{
+    transform: scale(1);
+}
+
+.touch:hover::after{
+    transform: scale(1);
 }
 
 .contact{
@@ -93,10 +154,11 @@
     font-family: serif;
     color: mediumslateblue;
     word-spacing: 0.8rem;
+    font-family: 'hinted-RobotoSlab';
 }
 
 .left-main p{
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'hinted-RobotoSlab';
     text-align: justify;
     margin-bottom: 10px;
     font-size: 17px;
@@ -129,7 +191,7 @@
 
 .image-container p{
     text-align: center;
-    font-family: Verdana,  'alex brush','hinted-LobsterTwo', sans-serif;
+    font-family: 'varela Round', Verdana, sans-serif;
     padding: 7px;
 }
 
@@ -179,10 +241,10 @@
 
 .showcase p{
     font-size: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'varela Round','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
     font-style: italic;
-    text-shadow: 2px 2px darkolivegreen;
+    text-shadow: 2px 2px teal;
 }
 
 .reach{
@@ -281,7 +343,7 @@
     display: inline-block;
     background-color: brown;
     padding: 5px;
-    font-family: 'hinted-LobsterTwo', Verdana, Geneva, Tahoma, sans-serif;
+    font-family:  Verdana, Geneva, Tahoma, sans-serif;
     height: 43px;
     transition: 0.5s;
 } 
@@ -321,8 +383,8 @@
     margin-bottom: 15px;
     text-decoration: none;
     color: white;
-    font-family: 'hinted-LobsterTwo', 'Times New Roman', Times, serif;
-    font-size: 20px;
+    font-family: 'varela Round', sans-serif;
+    font-size: 1rem;
 }
 
 .links-container a:hover{
@@ -359,11 +421,11 @@
     width: 100%;
     padding: 12px 0px;
     font-size: 20px;
-    font-family:'hinted-LobsterTwo', 'Times New Roman', Times, serif ;
+    font-family: 'varela Round', sans-serif;
 }
 @media screen and (max-width: 1000px){
    #landing-page{
-        overflow: auto;
+        overflow-x: hidden;
     }
 
     .footer-container{
@@ -388,10 +450,21 @@
     .copyright{
         position: relative;
     }
+
     #nav-bar{
         width: 40vw;
-        height: 80vh;
+        height: 100vh;
         overflow:hidden ;
+    }
+
+    .nav-container li{
+        margin: 2px 20px;
+    }
+
+    .nav-container a:focus{
+        background-color: teal;
+        padding: 5px;
+        border-radius: 5px;
     }
 
     .right-curtain{
@@ -439,7 +512,7 @@
     }
 
     .hamburger{
-        height: 6px;
+        height: 2px;
         width: 80%;
         background-color: white;
         border-radius: 5px;
@@ -449,7 +522,7 @@
 
     .hamburger::before, .hamburger::after{
         content: '';
-       height: 6px;
+       height: 2px;
        width: 100%;
        background-color: white;
        border-radius: 5px;
@@ -491,8 +564,6 @@
 
 .button.open .hamburger-container .hamburger::before{
 	transform: rotate(45deg) translate(-85px, 85px);
-
-	
 }
 
 .button.open .hamburger-container .hamburger::after{
@@ -511,13 +582,14 @@
     }
 
     .left-curtain{
-        left: 25px;
+        left: 15px;
         top: 30px;
     }
 
     .right-curtain{
         top: 25%;
         left: 20%;
+        width: calc(100% - 30%);
     }
 
     .left-main h1{
@@ -527,7 +599,20 @@
     .showcase li{
         font-size: 1rem;
     }
+
+    .button{
+        width: 45px;
+        height: 45px;
+    }
+
+    .hamburger{
+        width: 70%;
+    }
     
+    .hamburger::before, .hamburger::after{
+        width: calc(70% + 30%);
+    }
+
     .button.open .hamburger-container .hamburger::before{
         transform: rotate(45deg) translate(-85px, 85px);
     }
@@ -543,18 +628,38 @@
         width: 230px;
         height: 230px;
     }
+
+    .nav-container a:focus{
+        background-color: teal;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .contact{
+        background-color: transparent;
+    }
+
     .main{
         left: 3%;
     }
 
+    .right-curtain{
+        width: calc(100% - 25%);
+    }
+
     .left-curtain{
         left: 10px;
-        top: 30px;
+        top: 25px;
+    }
+
+    .left-main p{
+        max-width: 280px;
     }
 
     #footer{
         align-items: flex-start;
     }
+    
 	.footer-main{
         align-items: flex-start;
         left: 2%;
@@ -637,11 +742,25 @@
         font-size: 17px;
     }
 
+    .hamburger::before{
+        width: 70%;
+        transform: translateY(-10px);
+    }
+
+    .hamburger::after{
+        width: 70%;
+        transform: translateY(10px);
+    }
+
+    .hamburger{
+        width: 50%;
+    }
+
     .button.open .hamburger-container .hamburger::before{
-        transform: rotate(45deg) translate(-95px, 95px); 
+        transform: rotate(45deg) translate(-45px, 45px);
     }
     
     .button.open .hamburger-container .hamburger::after{
-        transform: rotate(-45deg) translate(-95px, -95px);
+        transform: rotate(-45deg) translate(-45px, -45px);
     }
 }

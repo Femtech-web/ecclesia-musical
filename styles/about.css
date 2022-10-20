@@ -4,21 +4,30 @@
     box-sizing: border-box;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 .about-page{
  background-image: linear-gradient(to top left, black, rgb(0,0,35));
- position: relative;
 }
 
     /* --navigation and logo-- */
 #header{
     display: flex;
-    justify-content: space-evenly;
-    background-image: linear-gradient(to top left, black, rgb(0,0,35));;
+    justify-content: space-between;
+    background-image: linear-gradient(to top left, black, rgb(0,0,35));
     color: white;
+    margin-right: 50px;
+    width: 100%;
 }
 
 #nav-bar{
     margin-left: 8rem;
+}
+
+.left-curtain{
+    margin-left: 50px;
 }
 
 .left-curtain  p{
@@ -33,6 +42,7 @@
     display: inline-block;
     padding: 10px;
     margin: 5px 15px;
+    position: relative;
 }
 
 .nav-container a{
@@ -43,11 +53,27 @@
     font-family:  trebuchet ms, sans-serif;
 }
 
-.nav-container li:hover{
-    background-color: mediumslateblue;
-    opacity: 0.9;
-    border-radius: 5px;
+.touch::after{
+    content: '';
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    transform-origin: left;
+    top: 100%;
+    left: 0;
+    transition: all 0.5s;
+    transform: scale(0);
+    background-color: khaki;
 }
+
+.active::after{
+    transform: scale(1);
+}
+
+.touch:hover::after{
+    transform: scale(1);
+}
+
 
     /* --showcase image-- */
     
@@ -156,7 +182,7 @@
     border-radius: 5px;
     padding: 10px;
     font-size: large;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'varela Round', sans-serif;
 }
 
 .objective h3{
@@ -237,11 +263,8 @@
     display: flex;
     justify-content: space-evenly;
 }
-
-.genre-rule{
-    height: 20px;
-    width: 2px;
-    background-color: lightgray;
+.genre.line {
+    border-inline-end: 2px solid white;
 }
 
 
@@ -259,7 +282,7 @@ flex: 30%;
 }
 
 .about-team p{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'varela Round','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .profile{
@@ -270,7 +293,7 @@ flex: 30%;
 }
 
 .profile p{
-    text-align: justify;
+    max-width: 600px;
 }
 
 .profile-title{
@@ -340,6 +363,7 @@ flex: 30%;
  .newsletter h1{
     font-size: 40px;
     margin-bottom: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
 }
 
 .newsletter > p{
@@ -356,16 +380,13 @@ flex: 30%;
     display: inline-block;
     background-color: brown;
     padding: 5px;
-    font-family: 'hinted-LobsterTwo', Verdana, Geneva, Tahoma, sans-serif;
+    font-family:  Verdana, Geneva, Tahoma, sans-serif;
     height: 43px;
+    font-size: 22px;
     transition: 0.5s;
 } 
 .newsletter .subscribe:hover{
     background-color: coral;
-}
-
-.newsletter .subscribe p{
-    font-size: 22px;
 }
 
 .footer-main .rule{
@@ -396,8 +417,8 @@ flex: 30%;
     margin-bottom: 15px;
     text-decoration: none;
     color: white;
-    font-family: 'hinted-LobsterTwo', 'Times New Roman', Times, serif;
-    font-size: 20px;
+    font-family:  'varela Round', sans-serif;
+    font-size: 1em;
 }
 
 .links-container a:hover{
@@ -434,23 +455,27 @@ flex: 30%;
     width: 100%;
     padding: 12px 0px;
     font-size: 20px;
-    font-family:'hinted-LobsterTwo', 'Times New Roman', Times, serif ;
+    font-family: 'varela Round', sans-serif;
 }
 
 
 @media screen and (max-width: 1000px){
     .about-page{
-        overflow: hidden;
+        overflow-x: hidden ;
+    }
+
+    body{
+        overflow-x: hidden;
     }
 
     .about{
-        transform: translateY(0.5%);
         margin-bottom: 20px;
+        flex-direction: column;
     }
-    .showcase{
-        position: absolute;
-        top: 2%;
-        left: 0;
+
+    #header{
+        height: 15vh;
+        overflow: hidden;
     }
 
     .showcase-text h1{
@@ -461,16 +486,8 @@ flex: 30%;
         font-size: 1rem;
     }
 
-    .about{
-        flex-direction: column;
-    }
-
     .first-column{
         flex-direction: column;
-    }
-
-    .footer-container{
-        top: 200%;
     }
 
     .footer-main{
@@ -494,7 +511,7 @@ flex: 30%;
     #nav-bar{
         width: 40vw;
         height: 80vh;
-        overflow:hidden ;
+        overflow: hidden;
     }
 
     .right-curtain{
@@ -524,7 +541,7 @@ flex: 30%;
     }
 
     .hamburger{
-        height: 6px;
+        height: 2px;
         width: 80%;
         background-color: white;
         border-radius: 5px;
@@ -534,7 +551,7 @@ flex: 30%;
 
     .hamburger::before, .hamburger::after{
         content: '';
-       height: 6px;
+       height: 2px;
        width: 100%;
        background-color: white;
        border-radius: 5px;
@@ -590,14 +607,47 @@ flex: 30%;
 }
 
 @media screen and (max-width: 600px){
+
     .curtain-container{
         width: 250px;
         height: 250px;
     }
 
+    .showcase{
+        position: relative;
+    }
+
+    .nav-container a:focus{
+        background-color: teal;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
     .left-curtain{
-        left: 25px;
-        top: 30px;
+        margin-top: 5px;
+        margin-left: 20px;
+    }
+
+    #header{
+        position: fixed;
+        z-index: 100;
+        padding-bottom: 10px;
+        opacity: 0.9;
+        height: 13vh;
+    }
+
+    #nav-bar{
+        position: fixed;
+        right: 0; 
+        width: 80vw;   
+    }
+
+    .nav-container li{
+        margin: 5px 40px;
+    }
+
+    .nav-container{
+        width: 70vw;
     }
 
     .showcase li{
@@ -610,7 +660,7 @@ flex: 30%;
     }
 
     .genre p{
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     .about h3{
@@ -618,7 +668,30 @@ flex: 30%;
     }
 
     .first-column > p{
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-family: 'varela Round',Verdana, Geneva, Tahoma, sans-serif;
+        max-width: 700px;
+        text-align: left;
+    }
+
+    .objective p{
+        font-size: 0.9rem;
+    }
+
+    .about-team h2{
+        font-size: 1rem;
+    }
+
+    .button{
+        width: 45px;
+        height: 45px;
+    }
+
+    .hamburger{
+        width: 70%;
+    }
+    
+    .hamburger::before, .hamburger::after{
+        width: calc(70% + 30%);
     }
     
     .button.open .hamburger-container .hamburger::before{
@@ -639,6 +712,7 @@ flex: 30%;
 
     .left-curtain{
        transform: translateX(10px);
+       margin-top: 10px;
     }
 
     .categories{
@@ -647,16 +721,11 @@ flex: 30%;
     }
 
     .genre p{
-        font-size: 0.5rem;
+        font-size: 0.7rem;
     }
-    .about{
-        transform: translateY(0.8%);
-        margin-bottom: 40px;
-    }
-    .showcase{
-        position: absolute;
-        top: 1.5%;
-        left: 0;
+
+    .profile p{
+        font-size: 0.9rem;
     }
 
     #footer{
@@ -698,7 +767,13 @@ flex: 30%;
     }
 
     .newsletter h1{
-        font-size: 2rem;
+        font-size: 1.7rem;
+        font-family: Verdana, Geneva, Tahoma, sans-serif
+    }
+
+    .newsletter .subscribe {
+        font-size: 1.2rem;
+        height: 40px;
     }
 
     .links-container h3{
@@ -744,11 +819,25 @@ flex: 30%;
         font-size: 17px;
     }
 
+    .hamburger::before{
+        width: 70%;
+        transform: translateY(-10px);
+    }
+
+    .hamburger::after{
+        width: 70%;
+        transform: translateY(10px);
+    }
+
+    .hamburger{
+        width: 50%;
+    }
+
     .button.open .hamburger-container .hamburger::before{
-        transform: rotate(45deg) translate(-95px, 95px); 
+        transform: rotate(45deg) translate(-45px, 45px);
     }
     
     .button.open .hamburger-container .hamburger::after{
-        transform: rotate(-45deg) translate(-95px, -95px);
+        transform: rotate(-45deg) translate(-45px, -45px);
     }
 }
