@@ -6,6 +6,7 @@ const cards = document.querySelectorAll('.card');
 const innerCards = document.querySelectorAll('.inner-card');
 const innerImage = document.querySelectorAll('.inner-image');
 const btn = document.querySelector('.button');
+let menuOpen = true;
 
 const innerWords = ['<h3 class="inner-text-head">Birthdays</h3>', 
 '<h3 class="inner-text-head">Weddings</h3>', 
@@ -60,67 +61,76 @@ btn.addEventListener('click', (e) => {
 	btn.classList.toggle('open');
 });
 
-
-for(let i = 0; i < cards.length; i++){
-	innerImage[i].addEventListener('mouseover', (e) => {
-		console.log(e);
-		innerCards[i].innerHTML = images[i];
-		innerImage[i].innerHTML = innerWords[i];
-
-		innerCards[i].firstElementChild.classList.add('img');
-		innerImage[i].firstElementChild.classList.add('inner-text-head2');
-		innerImage[i].style.backgroundColor =  innerCardColors[i];
-		innerImage[i].classList.add('inner-image2');
-		const paragraph = document.createElement('p');
-		paragraph.innerText	= mouseoverWords[i];
-		paragraph.classList.add('inner-card-body');
-		paragraph.style.fontFamily = "'varela Round', sans-serif";
-		innerImage[i].append(paragraph);
-	});
-	
-	cards[i].addEventListener('pointerout', () => {
-		innerCards[i].innerHTML = innerWords[i];
-		innerImage[i].innerHTML = images[i];
-
-		innerCards[i].firstElementChild.classList.remove('img');
-		innerImage[i].firstElementChild.classList.remove('inner-text-head2');
-		innerImage[i].style.backgroundColor = '';
-		innerImage[i].classList.remove('inner-image2');				
-	});
-}
-
-
-
-
-
-	
-
-
-
-
-
-
-
-// window.addEventListener('scroll', (e) => {
-// 	if(pageYOffset > 960){
-// 		let time2 = 0;
-
-// 		function textSlider(){
-// 		const stopAnimation = setInterval(() => {
-// 			time2 += 1;
+const openSlider = (mediaEvent) => {
+	if(!mediaEvent.matches){
+		for(let i = 0; i < cards.length; i++){
+			innerImage[i].addEventListener('mouseover', (e) => {
+				console.log(e);
+				innerCards[i].innerHTML = images[i];
+				innerImage[i].innerHTML = innerWords[i];
 		
-// 			if(time2 > 200){
-// 				clearInterval(stopAnimation)
-// 			};
+				innerCards[i].firstElementChild.classList.add('img');
+				innerImage[i].firstElementChild.classList.add('inner-text-head2');
+				innerImage[i].style.backgroundColor =  innerCardColors[i];
+				innerImage[i].classList.add('inner-image2');
+				const paragraph = document.createElement('p');
+				paragraph.innerText	= mouseoverWords[i];
+				paragraph.classList.add('inner-card-body');
+				paragraph.style.fontFamily = "'varela Round', sans-serif";
+				innerImage[i].append(paragraph);
+			});
+			
+			cards[i].addEventListener('mouseout', () => {
+				innerCards[i].innerHTML = innerWords[i];
+				innerImage[i].innerHTML = images[i];
 		
-// 			footerText.style.left = `${time}px`;
-// 		}, 300);
-// 		}
+				innerCards[i].firstElementChild.classList.remove('img');
+				innerImage[i].firstElementChild.classList.remove('inner-text-head2');
+				innerImage[i].style.backgroundColor = '';
+				innerImage[i].classList.remove('inner-image2');				
+			});
+		};
+	} else{
+		for(let i = 0; i < cards.length; i++){
+			cards[i].addEventListener('click', (e) => {
+				if(menuOpen){
+					console.log(e);
+					innerCards[i].innerHTML = images[i];
+					innerImage[i].innerHTML = innerWords[i];
+			
+					innerCards[i].firstElementChild.classList.add('img');
+					innerImage[i].firstElementChild.classList.add('inner-text-head2');
+					innerImage[i].style.backgroundColor =  innerCardColors[i];
+					innerImage[i].classList.add('inner-image2');
+					const paragraph = document.createElement('p');
+					paragraph.innerText	= mouseoverWords[i];
+					paragraph.classList.add('inner-card-body');
+					paragraph.style.fontFamily = "'varela Round', sans-serif";
+					innerImage[i].append(paragraph);
+					 menuOpen = false;
+				} else{
+						innerCards[i].innerHTML = innerWords[i];
+						innerImage[i].innerHTML = images[i];
+				
+						innerCards[i].firstElementChild.classList.remove('img');
+						innerImage[i].firstElementChild.classList.remove('inner-text-head2');
+						innerImage[i].style.backgroundColor = '';
+						innerImage[i].classList.remove('inner-image2');		
+						menuOpen = true;		
+				}
+				
+			});
+			
+		};
+	}
+	
+};
 
-// 		textSlider()
-// 	}
-// })
 
+const mediaQuery = window.matchMedia('(max-width: 1000px)');
+openSlider(mediaQuery);
+
+mediaQuery.addListener(openSlider);
 
 
 let time = 100;
